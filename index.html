@@ -1,10 +1,26 @@
 ---
-layout: default
+layout: blog_layout
 ---
-<h1>欢迎来到我的个人博客</h1>
-<p>文章列表：</p>
-<ul>
-   {% for post in site.posts %}
-       <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-   {% endfor %}
-</ul>
+
+{% for post in site.posts %}
+<article class="preview">
+    <header>
+        <h2 class="post-title">
+            <a href="{{ post.url }}">  {{ post.title }} </a>
+        </h2>
+        <p class="post-time"> {{ post.time }}</p>
+    </header>
+    <section class="post-section">
+        <p>
+            {{ post.excerpt }}
+        </p>
+        <p class="readmore">
+            <a href="{{ post.url }}">
+                阅读全文
+                <span class="glyphicon glyphicon-circle-arrow-right"></span>
+            </a>
+        </p>
+    </section>
+
+</article>
+{% endfor %}
