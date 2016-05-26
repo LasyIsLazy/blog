@@ -1,7 +1,7 @@
 ---
 layout: post_layout
 title: inline-block之间的间距问题
-time: 2016年5月25日14:22:50
+time: 2016年5月25日
 location: 江西南昌
 ---
 
