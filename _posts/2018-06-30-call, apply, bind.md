@@ -1,3 +1,16 @@
+---
+post_title: 'call, apply, bind'
+post_name: 'this is post name'
+post_date: '2018-06-30 09:36:02'
+layout: post
+published: false
+author: lasy
+tags:
+    - JavaScript
+categories:
+    - JavaScript
+---
+
 # call, apply, bind
 
 ## call
