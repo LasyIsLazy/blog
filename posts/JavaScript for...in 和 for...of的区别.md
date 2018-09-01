@@ -111,3 +111,13 @@ for (let i in obj) {
 ```
 
 可以看到，对于不可枚举的属性`unenumerable`，`Object.keys()`中并不存在，`for..in`也不能遍历。
+
+参考：
+
+- [segmentfault](https://segmentfault.com/q/1010000006658882)
+- [MDN - 属性的可枚举性和所有权](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Enumerability_and_ownership_of_properties)
+- [MDN - Object.getOwnPropertyNames()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames)
+- [MDN - Object.prototype.propertyIsEnumerable()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable)
+- [MDN - for...in](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...in)
+- [MDN - for...of](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/for...of)
+- [阮一峰博客 - Generator 函数的语法](http://es6.ruanyifeng.com/#docs/generator)
