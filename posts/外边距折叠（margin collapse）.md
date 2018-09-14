@@ -1,9 +1,3 @@
-在阅读本文之前你可能需要了解的内容：
-
-- BFC
-- 清除浮动
-- 文档流
-
 ## 定义
 
 [W3C的定义](https://www.w3.org/TR/CSS2/box.html#collapsing-margins)：
