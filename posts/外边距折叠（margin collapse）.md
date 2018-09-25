@@ -29,7 +29,7 @@
   - top and bottom margins of a box that does not establish a new block formatting context and that has zero computed 'min-height', zero or 'auto' computed 'height', and no in-flow children
 
 1.两个边距都属于 **流内(in-flow)**的 **同一BFC（块级格式化上下文）**中的块级元素。
-1.没有line boxes、清除浮动、内边距（padding）或者边框（border）将它们分开。
+1.没有line boxes、clearance、内边距（padding）或者边框（border）将它们分开。
 1.两个边距都是垂直相邻的外边距。包括以下几种类型：
   1.一个盒子的`top margin`和其第一个流内的 **子元素**的`top margin`。
   1.一个盒子的`bottom margin`和其第一个流内的 **兄弟元素**的`top margin`。
@@ -145,7 +145,7 @@ div:last-of-type {
 - 流内
 - 同一BFC
 - 块级元素
-- 没有line boxes、清除浮动、内边距（padding）或者边框（border）将它们分开。
+- 没有line boxes、clearance、内边距（padding）或者边框（border）将它们分开。
 - 垂直相邻
 
 需要先解释几个概念：流、BFC
@@ -189,7 +189,7 @@ BFC:
 
 破坏条件：
 
-- 流内：浮动或绝对定位使元素成为流外元素。流外元素不发生外边距折叠。
+- 流内。浮动或绝对定位使元素成为流外元素。流外元素不发生外边距折叠。
 
 #### 2. 嵌套父级元素并使之产生新的BFC
 
@@ -203,8 +203,6 @@ BFC:
 破坏条件：
 
 - 同一BFC。该元素新增的父级元素产生了新的BFC，该元素属于新增的父元素产生的BFC。
-
-这个方案并不是一个好方案，因为我们增加了不必要的元素，会带来一些其他麻烦。
 
 #### 3. 设置display为block、list-item、table以外的值
 
@@ -235,9 +233,22 @@ BFC:
 
 破坏条件：
 
-- 没有line boxes、清除浮动、内边距（padding）或者边框（border）将它们分开。边框和内边距将发生折叠的外边距分开，使两者不再邻接。
+- 没有line boxes、clearance、内边距（padding）或者边框（border）将它们分开。边框和内边距将发生折叠的外边距分开，使两者不再邻接。
 
-待填坑：line boxes，clearance
+#### 5. 在两个边框之间增加元素
+
+适用类型：
+
+- 相邻元素
+- 嵌套元素
+- 空的块级元素
+
+破坏条件：
+
+- 没有line boxes、clearance、内边距（padding）或者边框（border）将它们分开。line boxes（增加的元素）将发生折叠的外边距分开，使两者不再邻接。
+
+以上便是关于外边距折叠的所有内容。
+本文中还提到了clearance，但是clearance对外边距叠加的影响需要一定的篇幅来介绍，我准备再写一篇文章单独介绍clearance对外边距叠加的影响。
 
 参考：
 
