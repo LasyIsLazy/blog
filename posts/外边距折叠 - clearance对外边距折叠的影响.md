@@ -1,4 +1,4 @@
-在我的另一篇文章 [外边距折叠（margin collapse）](https://link) 中介绍了外边距折叠相关的内容，其中产生外边距折叠有这么一个条件：
+在我的另一篇文章 [外边距折叠（margin collapse）](http://www.lasy.site/2018/09/14/%E5%A4%96%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0%EF%BC%88margin-collapse%EF%BC%89/) 中介绍了外边距折叠相关的内容，其中产生外边距折叠有这么一个条件：
 > 没有 line boxes、clearance、内边距（padding）或者边框（border）将它们分开。
 
 其中提到了 clearance，但是并没有展开讨论，这篇文章就是来具体讨论 clearance 对外边距折叠的影响。
@@ -107,3 +107,5 @@ div2 距离 div1 距离必须小于 div1 的 `margin-bottom` 加上 float 的高
 - 两个边距之间有 clearance 存在的时候不会发生外边距叠加。
 - `clear` 不一定产生 clearance。
 - 通过clearance阻止外边距叠加不是一个好的方案，因为处于后面的外边距会失去作用。但是我们有必要了解clearance对外边距叠加的影响。
+
+本文中的代码可以从我的 [github](https://github.com/LasyIsLazy/code-collections/tree/master/front-end/demos/margin-collapse/clearance) 中找到。
