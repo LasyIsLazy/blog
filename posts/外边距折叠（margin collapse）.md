@@ -248,7 +248,7 @@ BFC:
 - 没有line boxes、clearance、内边距（padding）或者边框（border）将它们分开。line boxes（增加的元素）将发生折叠的外边距分开，使两者不再邻接。
 
 以上便是关于外边距折叠的所有内容。
-本文中还提到了clearance，但是clearance对外边距折叠的影响需要一定的篇幅来介绍，我准备再写一篇文章单独介绍clearance对外边距折叠的影响。
+本文中还提到了clearance，但是clearance对外边距折叠的影响需要一定的篇幅来介绍，且不适合用于阻止外边距折叠，我写了另一篇文章单独介绍clearance对外边距折叠的影响。
 
 参考：
 
