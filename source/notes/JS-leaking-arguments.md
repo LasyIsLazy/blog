@@ -28,3 +28,7 @@ const result = original.apply(this, args)
 
 将 `arguments` 中需要的参数取出来，赋值给新的数组，并将该数组作为另一个函数的参数。也就是上面 Vue 源码中的方案。
 
+相关文章
+
+- [http://www.jstips.co/zh_cn/javascript/avoid-modifying-or-passing-arguments-into-other-functions-it-kills-optimization/](http://www.jstips.co/zh_cn/javascript/avoid-modifying-or-passing-arguments-into-other-functions-it-kills-optimization/)
+- [JavaScript arguments 对象全面介绍——知乎专栏](https://zhuanlan.zhihu.com/p/23007032)
