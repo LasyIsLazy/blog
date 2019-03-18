@@ -30,7 +30,7 @@ const lens = readline()
  */
 let lower = 0.01
 let higher = Math.min(...lens)
-while (higher - lower > 0.01) {
+while (higher - lower > 0.001) {
   const middle = (higher + lower) / 2
   check(middle) ? (lower = middle) : (higher = middle)
 }
