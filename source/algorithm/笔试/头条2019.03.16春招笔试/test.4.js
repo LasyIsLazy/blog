@@ -31,6 +31,7 @@ const lens = readline()
 let lower = 0.01
 let higher = Math.min(...lens)
 while (higher - lower > 0.001) {
+  // 这里要比精度多一位。比如 lower = 0.109，heigher = 0.203，取 middle 为 0.201，而这个值有可能合适。
   const middle = (higher + lower) / 2
   check(middle) ? (lower = middle) : (higher = middle)
 }
