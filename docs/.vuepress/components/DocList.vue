@@ -28,7 +28,7 @@ export default {
       return page.frontmatter.tags && page.frontmatter.tags.join('，')
     },
     formateDate(dateStr) {
-      return dateStr && dateStr.replace(/\..+$/g, '').replace('T', ' ')
+      return dateStr && dateStr.replace(/T.+$/g, ' ')
     }
   }
 }
@@ -39,13 +39,13 @@ export default {
   margin-left: 20%;
 }
 .date {
-  color: #999;
+  color: #ccc;
 }
 .title {
   font-size: 20px;
 }
 .tags {
-  color: #c2c5cd;
+  color: #aaa;
   font-size: 12px;
 }
 </style>
