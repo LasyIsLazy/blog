@@ -10,6 +10,8 @@ module.exports = {
       // { text: '面试题', link: '/interview/' },
       { text: '笔记', link: '/notes/' },
       { text: 'GitHub', link: 'https://github.com/LasyIsLazy' }
-    ]
+    ],
+    sidebar: 'auto',
+    sidebarDepth: 2
   }
 }
