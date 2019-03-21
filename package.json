@@ -1,0 +1,16 @@
+{
+  "name": "lasy-blog",
+  "version": "0.3.0",
+  "description": "Lasy's blog",
+  "main": "index.js",
+  "repository": "https://github.com/LasyIsLazy/blog.git",
+  "author": "1255352506@qq.com",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^0.14.10"
+  },
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  }
+}
