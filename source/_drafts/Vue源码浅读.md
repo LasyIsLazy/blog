@@ -53,10 +53,74 @@ class Dep {
 
 每一个实例上都会存有一个 Dep 的实例 `dep = new Dep()`（通过闭包）
 
-dep 中会有一个订阅者列表 `subs`，其中存放观察者（Watcher）的实例，此时观察者也是订阅者。
+dep 中会有一个订阅者列表 `subs`，其中存放 Watcher 的实例。
 
 #### 如何管理依赖
 
-当有新的依赖时，会调用 `dep.addSub()` 将相关的 Watcher 实例添加到 `dep.subs` 中；同理，某些依赖不再被需要，就会调用 `dep.removeSub()` 将相关的 Watcher 实例从 `dep.subs` 中移除。
+当有新的依赖时，会调用 `dep.addSub()` 将相关的 Watcher 实例添加到 `dep.subs` 中
 
 当依赖变化时，会调用 `dep.notify()` 执行 `subs` 中每个订阅者的 `run()` 也就是前面提到的更新视图的操作。
+
+#### 依赖变化是如何监听到的呢
+
+数据变化会调用数据的 `setter`，`setter` 中会调用 `dep.notify()` 通知 `dep.subs` 中的 wather 更新（`watcher.update()`），这其中的 watcher 就包含 用来更新视图（`updateComponent`） 的 watcher，因此数据的变化导致了视图的更新
+
+## 事件分发机制
+
+四个核心方法：`on`、`once`、`emit`、`off`。
+
+简单实现：
+
+### on
+
+把事件添加到 `_events` 中
+
+```JavaScript
+function on(event, callback) {
+    const events = vm._events
+    events[event] ? events[event].push(callback) : events[event] = [callback]
+}
+```
+
+### off
+
+把事件从 `_events` 中移除：传了要移除的回调则移除这个回调，否则这个事件所有的回调
+
+```JavaScript
+function off(event, callback) {
+    const events = vm._events
+    if (typeof callback === 'undefined') {
+        events[event] = null
+    } else {
+        const cbs = events[event]
+        const rmIndex = cbs.findIndex(cb => cb === callback)
+        cbs.splice(rmIndex, 1)
+    }
+    
+}
+```
+
+### once
+
+对回调进行一次封装，注册封装后的函数。这个函数运行一次之后就会调用 `off` 移除自身的注册。
+
+```JavaScript
+function once(event, callback) {
+    const events = vm._events
+    const eventWrapper = function() {
+        callback.call(vm, args.slice(1)) // 执行
+        vm.off(event, eventWrapper) // 移除
+    }
+    vm.on(event, eventWrapper) // 监听
+}
+```
+
+### emit
+
+触发
+
+```JavaScript
+function emit(event, args) {
+    vm._events[event].forEach(e => e.apply(vm, args))
+}
+```
