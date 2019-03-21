@@ -23,9 +23,6 @@ export default {
       return this.$site.pages.filter(item => item.title && item.path.split('/')[1] === this.category)
     }
   },
-  mounted() {
-    console.log(this)
-  },
   methods: {
     getTags(page) {
       return page.frontmatter.tags && page.frontmatter.tags.join('，')
