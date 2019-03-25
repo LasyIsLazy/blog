@@ -7,6 +7,7 @@
   "author": "1255352506@qq.com",
   "license": "MIT",
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.0.0-alpha.44",
     "vuepress": "^1.0.0-alpha.44"
   },
   "scripts": {

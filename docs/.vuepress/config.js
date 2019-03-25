@@ -13,5 +13,6 @@ module.exports = {
     sidebar: 'auto',
     sidebarDepth: 2,
     lastUpdated: '最后更新时间'
-  }
+  },
+  plugins: ['@vuepress/back-to-top'] 
 }
