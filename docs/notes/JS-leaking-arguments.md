@@ -1,3 +1,10 @@
+---
+title: JS leaking arguments
+date: 2019-03-12
+tags:
+- JavaScript
+- leaking arguments
+---
 # JavaScript leaking arguments
 
 在看 `Vue` 源码时，遇到这么一段代码：

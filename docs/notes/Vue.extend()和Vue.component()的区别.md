@@ -1,3 +1,11 @@
+---
+title: Vue.extend() 和 Vue.component() 的区别
+date: 2019-03-15
+tags:
+- Vue.extend()
+- Vue.component()
+---
+# Vue.extend() 和 Vue.component() 的区别
 ## Vue.extend( options )
 
 > 使用基础 Vue 构造器，创建一个“子类”。参数是一个包含组件选项的对象
