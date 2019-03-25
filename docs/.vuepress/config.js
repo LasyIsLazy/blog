@@ -11,6 +11,7 @@ module.exports = {
       { text: 'GitHub', link: 'https://github.com/LasyIsLazy' }
     ],
     sidebar: 'auto',
-    sidebarDepth: 2
+    sidebarDepth: 2,
+    lastUpdated: '最后更新时间'
   }
 }
