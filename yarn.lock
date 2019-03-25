@@ -6973,7 +6973,7 @@ webpack-chain@^4.6.0, webpack-chain@^4.9.0:
     deepmerge "^1.5.2"
     javascript-stringify "^1.6.0"
 
-webpack-dev-middleware@3.6.0, webpack-dev-middleware@^3.5.1:
+webpack-dev-middleware@^3.5.1:
   version "3.6.0"
   resolved "http://registry.npm.taobao.org/webpack-dev-middleware/download/webpack-dev-middleware-3.6.0.tgz#71f1b04e52ff8d442757af2be3a658237d53a3e5"
   integrity sha1-cfGwTlL/jUQnV68r46ZYI31To+U=

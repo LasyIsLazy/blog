@@ -9,9 +9,6 @@
   "devDependencies": {
     "vuepress": "^1.0.0-alpha.44"
   },
-  "resolutions": {
-    "webpack-dev-middleware": "3.6.0"
-  },
   "scripts": {
     "start": "yarn run dev || npm run dev",
     "dev": "vuepress dev docs",
