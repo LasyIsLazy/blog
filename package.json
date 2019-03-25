@@ -13,6 +13,7 @@
     "webpack-dev-middleware": "3.6.0"
   },
   "scripts": {
+    "start": "yarn run dev || npm run dev",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   }
