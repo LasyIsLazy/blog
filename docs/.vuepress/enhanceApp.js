@@ -1,8 +1,11 @@
+/**
+ * 配置 Vue、router 等
+ * 修改后需要重新运行 yarn dev
+ */
 import 'gitalk/dist/gitalk.css'
 import Gitalk from 'gitalk'
-function initGitTalk() {
-  const splitPath = location.pathname.split('.')
-  console.log(splitPath)
+function initGitTalk(path) {
+  const splitPath = path.split('.')
   if (splitPath[splitPath.length - 1] !== 'html') {
     return
   }
@@ -15,6 +18,9 @@ function initGitTalk() {
   const page = document.querySelector('.page')
   if (page) {
     page.appendChild(gitalkContainer)
+    const matched = decodeURI(path).match(/(?<=\/(?!.+\/)).+(?=\.html)/g)
+    let article = decodeURI(path)
+    matched && (article = matched[0])
     // TODO: 安全性测试
     new Gitalk({
       clientID: '6f10271d17c81d0e70b5',
@@ -22,7 +28,7 @@ function initGitTalk() {
       repo: 'blog-comments',
       owner: 'LasyIsLazy',
       admin: ['LasyIsLazy'],
-      id: location.pathname,
+      id: article,
       distractionFreeMode: false,
       language: 'zh-CN'
     }).render('gitalk-container')
@@ -35,6 +41,6 @@ export default ({
   siteData // 站点元数据
 }) => {
   router.afterEach(to => {
-    initGitTalk(to)
+    initGitTalk(to.path)
   })
 }
