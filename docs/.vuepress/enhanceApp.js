@@ -1,7 +1,3 @@
-/**
- * 配置 Vue、router 等
- * 修改后需要重新运行 yarn dev
- */
 import 'gitalk/dist/gitalk.css'
 import Gitalk from 'gitalk'
 function initGitTalk(path) {
@@ -41,6 +37,8 @@ export default ({
   siteData // 站点元数据
 }) => {
   router.afterEach(to => {
-    initGitTalk(to.path)
+    Vue.nextTick(() => {
+      initGitTalk(to.path)
+    })
   })
 }
