@@ -14,5 +14,8 @@
     "start": "yarn run dev || npm run dev",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "gitalk": "^1.5.0"
   }
 }
