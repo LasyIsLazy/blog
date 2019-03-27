@@ -1,7 +1,7 @@
 <template>
   <div style="display: flex; flex-direction: column">
     <div v-for="page of pages" :key="page.key" class="item">
-      <div class="date">{{ formateDate(page.frontmatter.date) }}</div>
+      <div class="date">{{ page.date }}</div>
       <router-link :to="page.path" class="title">{{ page.title }}</router-link>
       <div class="tags" style>{{ getTags(page) }}</div>
     </div>
@@ -20,7 +20,16 @@ export default {
       return splitPath ? splitPath[splitPath.length - 2] : 'posts' // 默认 posts
     },
     pages() {
-      return this.$site.pages.filter(item => item.title && item.path.split('/')[1] === this.category)
+      return this.$site.pages
+        .filter(item => item.title && item.path.split('/')[1] === this.category)
+        .sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date))
+        .map(item => {
+          const date = this.formateDate(item.frontmatter.date)
+          return {
+            ...item,
+            date
+          }
+        })
     }
   },
   methods: {
