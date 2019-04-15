@@ -1,10 +1,13 @@
 <template>
   <div style="display: flex; flex-direction: column">
-    <div v-for="page of pages" :key="page.key" class="item">
-      <div class="date">{{ page.date }}</div>
-      <router-link :to="page.path" class="title">{{ page.title }}</router-link>
-      <div class="tags" style>{{ getTags(page) }}</div>
-    </div>
+    <doc-item
+      v-for="page of pages"
+      :key="page.key"
+      :date="page.date"
+      :path="page.path"
+      :title="page.title"
+      :tags="getTags(page)"
+    ></doc-item>
   </div>
 </template>
 <script>
@@ -34,7 +37,7 @@ export default {
   },
   methods: {
     getTags(page) {
-      return page.frontmatter.tags && page.frontmatter.tags.join('，')
+      return page.frontmatter.tags
     },
     formateDate(dateStr) {
       return dateStr && dateStr.replace(/T.+$/g, ' ')
@@ -43,10 +46,6 @@ export default {
 }
 </script>
 <style scoped>
-.item {
-  padding: 20px 0;
-  margin-left: 20%;
-}
 .date {
   color: #ccc;
 }
