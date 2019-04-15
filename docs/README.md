@@ -1,6 +1,6 @@
 ---
 home: true
-footer: MIT Licensed | Copyright © 2019-present Lasy
+footer: Copyright © 2016-present Lasy
 ---
 
 <p style="textAlign: center">
