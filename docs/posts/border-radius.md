@@ -131,6 +131,8 @@ tags:
 
 半径的形式可以使数值也可以是百分比，其中，横轴半径百分比相对于元素 `width`，纵轴半径百分比相对于元素 `height`。
 
+我写了一个可以预览 border-radius 效果的简单网页，可以通过设置各个半径查看效果：[https://lasyislazy.github.io/border-radius/](https://lasyislazy.github.io/border-radius/)（当然，你也可以直接用控制台）
+
 参考：
 
 - [w3.org](https://www.w3.org/TR/css-backgrounds-3/#corners)
