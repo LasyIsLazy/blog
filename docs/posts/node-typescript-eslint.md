@@ -262,6 +262,8 @@ ESLint 扩展默认不会 lint TypeScript 文件，修改 VSCode 中 `eslint.val
 
 至此，我们已经可以在项目中使用 TypeScript + ESLint 了。
 
+本文提供了使用 TypeScript + ESLint 的基本配置。更多进阶的配置（如 Webpack、git hooks 等）还需要读者自行探索。
+
 参考链接：
 
 - [TypeScript tutorial in Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-tutorial)
