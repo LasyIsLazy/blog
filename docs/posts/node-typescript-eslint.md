@@ -261,3 +261,7 @@ ESLint 扩展默认不会 lint TypeScript 文件，修改 VSCode 中 `eslint.val
 **Note**：ESLint 扩展依赖于 eslint 包和 ESLint 配置文件，因此需要确保项目安装了 `eslint` 并且配置了 `.eslintrc.js` 或 `.eslintrc.json`，ESLint 扩展才能正常运行
 
 至此，我们已经可以在项目中使用 TypeScript + ESLint 了。
+
+参考链接：
+
+- [TypeScript tutorial in Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-tutorial)
