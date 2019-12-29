@@ -21,3 +21,6 @@ jobs:
           FTP_SERVER: qxu1098320196.my3w.com
           FTP_USERNAME: qxu1098320196
           FTP_PASSWORD: ${{ secrets.BLOG_FTP_PASSWORD }}
+          LOCAL_DIR: docs/.vuepress/dist
+          REMOTE_DIR: /htdocs
+          ARGS: --delete
