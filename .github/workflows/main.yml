@@ -9,12 +9,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      name: Build
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    - run: npm install && npm run build
-    - run: ls
+    - name: Build
+      run: npm install && npm run build
     - name: FTP Deploy
       uses: SamKirkland/FTP-Deploy-Action@2.0.0
       env:
