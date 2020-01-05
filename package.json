@@ -7,15 +7,13 @@
   "author": "1255352506@qq.com",
   "license": "MIT",
   "devDependencies": {
-    "@vuepress/plugin-back-to-top": "^1.2.0",
-    "vuepress": "^1.2.0"
+    "vuepress": "^1.2.0",
+    "vuepress-theme-reco": "^1.2.0"
   },
   "scripts": {
     "start": "yarn run dev || npm run dev",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   },
-  "dependencies": {
-    "gitalk": "^1.5.0"
-  }
+  "dependencies": {}
 }
