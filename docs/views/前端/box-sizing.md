@@ -3,8 +3,6 @@ title: box-sizing
 date: 2018-05-25 9:04:09
 tags:
 - CSS
-- box-sizing
-- 盒模型
 categories: 
  - 前端
 ---

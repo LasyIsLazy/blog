@@ -3,8 +3,6 @@ title: css 权重（CSS 优先级）
 date: 2018-05-25 9:04:09
 tags:
 - CSS
-- CSS优先级
-- CSS权重
 categories: 
  - 前端
 ---

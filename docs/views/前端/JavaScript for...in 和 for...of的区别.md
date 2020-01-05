@@ -2,10 +2,6 @@
 title: JavaScript for...in 和 for...of的区别
 date: 2018-09-03 15:10:34
 tags:
-- for
-- for…of
-- for..in
-- for循环
 - JavaScript
 categories: 
  - 前端

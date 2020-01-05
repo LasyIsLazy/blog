@@ -4,8 +4,6 @@ date: 2019-03-28 15:09:09
 tags:
 - JavaScript
 - ES6
-- export
-- export default
 categories: 
  - 前端
 ---

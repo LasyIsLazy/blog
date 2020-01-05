@@ -2,8 +2,7 @@
 title: Vue.extend() 和 Vue.component() 的区别
 date: 2019-03-15
 tags:
-- Vue.extend()
-- Vue.component()
+- Vue
 categories: 
  - 前端
 ---

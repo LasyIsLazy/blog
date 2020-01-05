@@ -2,10 +2,7 @@
 title: var, let, const的区别
 date: 2018-09-10 15:28:13
 tags:
-- const
 - JavaScript
-- let
-- var
 categories: 
  - 前端
 ---

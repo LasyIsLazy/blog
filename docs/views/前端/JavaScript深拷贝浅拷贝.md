@@ -3,10 +3,6 @@ title: JavaScript深拷贝浅拷贝
 date: 2018-07-06 10:19:23
 tags:
 - JavaScript
-- 浅克隆
-- 浅拷贝
-- 深克隆
-- 深拷贝
 categories: 
  - 前端
 ---

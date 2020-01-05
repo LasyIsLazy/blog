@@ -3,12 +3,6 @@ title: Vue源码分析：computed 的惰性求值
 date: 2019年04月03日14:53:36
 tags:
 - Vue
-- computed
-- 惰性求值
-- lazy
-- dirty
-- evaluate
-- update
 categories: 
  - 前端
 ---

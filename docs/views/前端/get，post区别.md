@@ -2,8 +2,7 @@
 title: get，post区别
 date: 2018-07-07 17:58:48
 tags:
-- GET
-- POST
+- HTTP
 categories: 
  - 前端
 ---

@@ -3,10 +3,7 @@ title: 如何在 node 项目中使用 TypeScript + ESLint
 date: 2019-5-24 14:33:23
 tags:
 - TypeScript
-- node
 - Node.js
-- ESLint
-- VSCode
 - Visual Studio Code
 categories: 
  - 前端

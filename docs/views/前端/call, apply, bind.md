@@ -3,9 +3,6 @@ title: call, apply, bind
 date: 2018-07-16 00:00:00
 tags:
 - JavaScript
-- call
-- apply
-- bind
 categories: 
  - 前端
 ---

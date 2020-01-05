@@ -2,11 +2,7 @@
 title: 外边距折叠
 date: 2018-09-14 11:55:44
 tags:
-- margin collapse
-- margin collapsing
-- 外边距合并
-- 外边距塌陷
-- 外边距折叠
+- JavaScript
 categories: 
  - 前端
 ---

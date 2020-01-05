@@ -2,10 +2,7 @@
 title: 外边距折叠 - clearance对外边距折叠的影响
 date: 2018-09-26 15:35:34
 tags:
-- 外边距折叠
-- 清除浮动
-- clearance
-- clear
+- JavaScript
 categories: 
  - 前端
 ---

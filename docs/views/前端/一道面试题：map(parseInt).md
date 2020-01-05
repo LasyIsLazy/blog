@@ -3,8 +3,6 @@ title: 一道面试题：map(parseInt)
 date: 2018-09-03 15:11:47
 tags:
 - JavaScript
-- map
-- parseInt
 categories: 
  - 前端
 ---
