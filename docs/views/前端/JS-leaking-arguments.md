@@ -4,6 +4,8 @@ date: 2019-03-12
 tags:
 - JavaScript
 - leaking arguments
+categories: 
+ - 前端
 ---
 # JavaScript leaking arguments
 

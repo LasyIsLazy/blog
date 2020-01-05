@@ -6,6 +6,8 @@ tags:
 - 清除浮动
 - clearance
 - clear
+categories: 
+ - 前端
 ---
 在我的另一篇文章 [外边距折叠（margin collapse）](http://www.lasy.site/2018/09/14/%E5%A4%96%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0%EF%BC%88margin-collapse%EF%BC%89/) 中介绍了外边距折叠相关的内容，其中产生外边距折叠有这么一个条件：
 > 没有 line boxes、clearance、内边距（padding）或者边框（border）将它们分开。

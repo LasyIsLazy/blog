@@ -9,6 +9,8 @@ tags:
 - dirty
 - evaluate
 - update
+categories: 
+ - 前端
 ---
 
 ## Watcher

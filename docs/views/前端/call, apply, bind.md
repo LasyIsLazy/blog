@@ -6,6 +6,8 @@ tags:
 - call
 - apply
 - bind
+categories: 
+ - 前端
 ---
 # call, apply, bind
 

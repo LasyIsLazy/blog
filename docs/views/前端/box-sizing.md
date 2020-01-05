@@ -5,6 +5,8 @@ tags:
 - CSS
 - box-sizing
 - 盒模型
+categories: 
+ - 前端
 ---
 box-sizing是我们布局的时候经常要设置的一个CSS属性，影响CSS的盒模型
 

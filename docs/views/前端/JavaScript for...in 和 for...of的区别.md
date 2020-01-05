@@ -7,6 +7,8 @@ tags:
 - for..in
 - for循环
 - JavaScript
+categories: 
+ - 前端
 ---
 ## 定义
 

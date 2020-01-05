@@ -7,6 +7,8 @@ tags:
 - mouseleave
 - mouseout
 - mouseover
+categories: 
+ - 前端
 ---
 # mouseover, mouseenter, mouseout, mouseleave区别
 

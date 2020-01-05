@@ -6,6 +6,8 @@ tags:
 - ES6
 - export
 - export default
+categories: 
+ - 前端
 ---
 
 `export` 导出的是变量标识符，`export default` 导出的是引用。

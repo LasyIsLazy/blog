@@ -8,6 +8,8 @@ tags:
 - ESLint
 - VSCode
 - Visual Studio Code
+categories: 
+ - 前端
 ---
 
 # 如何在 node 项目中使用 TypeScript + ESLint

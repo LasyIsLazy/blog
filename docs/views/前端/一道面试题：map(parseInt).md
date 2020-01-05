@@ -5,6 +5,8 @@ tags:
 - JavaScript
 - map
 - parseInt
+categories: 
+ - 前端
 ---
 ## 题目
 
