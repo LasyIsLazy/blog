@@ -68,7 +68,8 @@ module.exports = {
     lastUpdated: 'Last Updated',
     author: '',
     authorAvatar: '/logo.jpeg',
-    record: 'xxxx',
+    record: '冀ICP备17005103号',
+    recordLink: 'http://www.beian.miit.gov.cn',
     startYear: '2016'
   },
 };
