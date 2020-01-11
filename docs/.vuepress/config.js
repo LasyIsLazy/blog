@@ -59,7 +59,7 @@ module.exports = {
         desc: '...',
         email: '...@...com',
         link: 'https://www.....com'
-      },
+      }
     ],
     logo: '/logo.jpeg',
     search: true,
@@ -70,6 +70,10 @@ module.exports = {
     authorAvatar: '/logo.jpeg',
     record: '冀ICP备17005103号',
     recordLink: 'http://www.beian.miit.gov.cn',
-    startYear: '2016'
-  },
+    startYear: '2016',
+    valineConfig: {
+      appId: 'D5VBRlStzgqV78h8jjxQOFOM-gzGzoHsz',
+      appKey: 'ea8pl1uDf5VyowF0S6lwCJTv'
+    }
+  }
 };
