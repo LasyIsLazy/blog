@@ -7,22 +7,21 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '10.x'
-    - name: Build
-      run: npm install && npm run build
-      env:  
-        LEANCLUOD_APP_ID: ${{ secrets.LEANCLUOD_APP_ID }}
-        LEANCLUOD_APP_KEY: ${{ secrets.LEANCLUOD_APP_KEY }}
-    - name: FTP Deploy
-      uses: SamKirkland/FTP-Deploy-Action@2.0.0
-      env:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+      - name: Build
+        run: npm install && npm run build
+        env:
+          LEANCLUOD_APP_ID: ${{ secrets.LEANCLUOD_APP_ID }}
+          LEANCLUOD_APP_KEY: ${{ secrets.LEANCLUOD_APP_KEY }}
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@2.0.0
+        env:
           FTP_SERVER: qxu1098320196.my3w.com
           FTP_USERNAME: qxu1098320196
           FTP_PASSWORD: ${{ secrets.BLOG_FTP_PASSWORD }}
