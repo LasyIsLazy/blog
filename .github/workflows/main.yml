@@ -27,4 +27,4 @@ jobs:
           FTP_PASSWORD: ${{ secrets.BLOG_FTP_PASSWORD }}
           LOCAL_DIR: docs/.vuepress/dist
           REMOTE_DIR: /htdocs
-          ARGS: --delete --exclude=logreport --verbose
+          ARGS: --delete --transfer-all --exclude=logreport --verbose
