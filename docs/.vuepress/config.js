@@ -85,7 +85,7 @@ module.exports = {
         process.env.NODE_ENV === 'development'
           ? require('./../../.secrets.json').LEANCLOUD_APP_KEY
           : process.env.LEANCLOUD_APP_KEY,
-      placeholder: '',
+      placeholder: '填写昵称和网址，你的昵称会链接到你的博客哦~',
       recordIP: true,
       avator: 'mp'
     }
