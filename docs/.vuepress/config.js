@@ -43,7 +43,7 @@ module.exports = {
             text: 'segmentfault',
             link: 'https://segmentfault.com/u/syliu',
             icon: 'reco-sf'
-          },
+          }
         ]
       }
     ],
@@ -77,11 +77,17 @@ module.exports = {
     recordLink: 'http://www.beian.miit.gov.cn',
     startYear: '2016',
     valineConfig: {
-      appId: process.env.LEANCLUOD_APP_ID,
-      appKey: process.env.LEANCLUOD_APP_KEY,
+      appId:
+        process.env.NODE_ENV === 'development'
+          ? require('./../../.secrets.json').LEANCLOUD_APP_ID
+          : process.env.LEANCLOUD_APP_ID,
+      appKey:
+        process.env.NODE_ENV === 'development'
+          ? require('./../../.secrets.json').LEANCLOUD_APP_KEY
+          : process.env.LEANCLOUD_APP_KEY,
       placeholder: '',
       recordIP: true,
-      avator: 'mp',
+      avator: 'mp'
     }
   }
 };

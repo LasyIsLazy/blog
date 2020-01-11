@@ -17,8 +17,8 @@ jobs:
       - name: Build
         run: npm install && npm run build
         env:
-          LEANCLUOD_APP_ID: ${{ secrets.LEANCLUOD_APP_ID }}
-          LEANCLUOD_APP_KEY: ${{ secrets.LEANCLUOD_APP_KEY }}
+          LEANCLUOD_APP_ID: ${{ secrets.LEANCLOUD_APP_ID }}
+          LEANCLUOD_APP_KEY: ${{ secrets.LEANCLOUD_APP_KEY }}
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@2.0.0
         env:
