@@ -38,7 +38,12 @@ module.exports = {
             text: 'GitHub',
             link: 'https://github.com/LasyIsLazy',
             icon: 'reco-github'
-          }
+          },
+          {
+            text: 'segmentfault',
+            link: 'https://segmentfault.com/u/syliu',
+            icon: 'reco-sf'
+          },
         ]
       }
     ],
@@ -74,7 +79,7 @@ module.exports = {
     valineConfig: {
       appId: process.env.LEANCLUOD_APP_ID,
       appKey: process.env.LEANCLUOD_APP_KEY,
-      placeholder: '填写昵称和网址可以让昵称链接到自己的博客哦~',
+      placeholder: '',
       recordIP: true,
       avator: 'mp',
     }
