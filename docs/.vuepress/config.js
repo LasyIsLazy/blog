@@ -1,3 +1,4 @@
+console.log(process.env)
 module.exports = {
   title: 'Lasy',
   description: "Lasy's blog",
