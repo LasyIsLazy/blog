@@ -73,7 +73,10 @@ module.exports = {
     startYear: '2016',
     valineConfig: {
       appId: 'D5VBRlStzgqV78h8jjxQOFOM-gzGzoHsz',
-      appKey: 'ea8pl1uDf5VyowF0S6lwCJTv'
+      appKey: 'ea8pl1uDf5VyowF0S6lwCJTv',
+      placeholder: '填写昵称和网址可以让昵称链接到自己的博客哦~',
+      recordIP: true,
+      avator: 'mp',
     }
   }
 };
