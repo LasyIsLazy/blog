@@ -1,6 +1,6 @@
 ---
 title: 如何在 node 项目中使用 TypeScript + ESLint
-date: 2019-5-24 14:33:23
+date: 2019-5-24
 tags:
 - TypeScript
 - Node.js
