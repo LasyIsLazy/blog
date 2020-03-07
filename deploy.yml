@@ -15,7 +15,7 @@ jobs:
         with:
           node-version: '10.x'
       - name: Build
-        run: npm install && npm run build
+        run: yarn && yarn build
         env:
           LEANCLOUD_APP_ID: ${{ secrets.LEANCLOUD_APP_ID }}
           LEANCLOUD_APP_KEY: ${{ secrets.LEANCLOUD_APP_KEY }}
