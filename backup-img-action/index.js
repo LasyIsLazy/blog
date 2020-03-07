@@ -8,8 +8,8 @@ const fs = require('fs');
 const path = require('path');
 (async function() {
   // Get images
-  const savePaths = getAllMd(DIR_PATH);
-  const savePaths = await getImg(savePaths);
+  const mdPaths = getAllMd(DIR_PATH);
+  const savePaths = await getImg(mdPaths);
 
   // Upload img-map.json
   for (let index = 0; index < savePaths.length; index++) {

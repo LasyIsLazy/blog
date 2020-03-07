@@ -3,6 +3,7 @@ const commonMark = require('commonmark');
 const axios = require('axios');
 const ora = require('ora');
 const path = require('path');
+const IMG_SAVE_PATH = './img' + Date.now();
 
 const getAllImg = markdown => {
   if (!markdown) return [];
@@ -24,8 +25,8 @@ const getAllImg = markdown => {
 
 async function getImg(files = []) {
   const savePaths = [];
-  if (!fs.existsSync('./img')) {
-    fs.mkdirSync('./img');
+  if (!fs.existsSync(IMG_SAVE_PATH)) {
+    fs.mkdirSync(IMG_SAVE_PATH);
   }
 
   const imgMap = {};
@@ -34,7 +35,7 @@ async function getImg(files = []) {
     const text = fs.readFileSync(filePath, { encoding: 'utf8' });
     const srcList = getAllImg(text);
     imgMap[path.basename(filePath)] = srcList;
-    console.log(`${srcList.length + 1} images in '${filePath}' `);
+    console.log(`${srcList.length} images in '${filePath}' `);
     srcList.forEach(url => {
       jobs.push(() => {
         const spinner = ora(`Download ${url}`).start();

@@ -7,8 +7,11 @@ const REMOTE_DIR = '/blog/';
 
 async function upload(base64Content, { Authorization, fileName }) {
   // GitHub API will decode the url
-  const url = BASE_URL + '/repos/LasyIsLazy/img/contents' + REMOTE_DIR;
-  encodeURIComponent(fileName);
+  const url =
+    BASE_URL +
+    '/repos/LasyIsLazy/img/contents' +
+    REMOTE_DIR +
+    encodeURIComponent(fileName);
   // if content exists
   const res = await axios({
     method: 'get',
@@ -18,8 +21,13 @@ async function upload(base64Content, { Authorization, fileName }) {
       Authorization,
       'Content-Type': 'application/json'
     }
+  }).catch(err => {
+    if (err.toString() !== `Error: Request failed with status code 404`) {
+      console.log(err);
+    }
+    return { data: { sha: '' } };
   });
-  const sha = res.data.sha;
+  const sha = (res.data && res.data.sha) || '';
   if (res.status === 200) {
     return axios({
       method: 'put',
