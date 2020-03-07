@@ -1,0 +1,9 @@
+name: 'Backup image'
+description: 'Backup image to GitHub'
+inputs:
+  ACCESS_TOKEN:
+    description: 'Token access to repository'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'

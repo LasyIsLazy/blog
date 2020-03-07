@@ -1,0 +1,24 @@
+on:
+  schedule:
+    # 每天 00:00
+    - cron: '0 0 * * *'
+  push:
+    paths:
+      # MarkDown 文件变化
+      - 'docs/**.md'
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Auto backup image
+    steps:
+      # To use this repository's private action, you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup node
+        uses: actions/setup-node@v1
+      - name: install
+        run: yarn
+      - name: Backup image
+        uses: ./backup-img-action # Uses an action in the root directory
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
