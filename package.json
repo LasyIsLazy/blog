@@ -7,6 +7,10 @@
   "author": "1255352506@qq.com",
   "license": "MIT",
   "devDependencies": {
+    "@actions/core": "^1.2.3",
+    "axios": "^0.19.2",
+    "commonmark": "^0.29.1",
+    "ora": "^4.0.3",
     "vuepress": "^1.2.0",
     "vuepress-theme-reco": "^1.2.0"
   },
