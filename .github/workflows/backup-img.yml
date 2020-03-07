@@ -1,3 +1,5 @@
+name: Backup Image
+
 on:
   schedule:
     # 每天 00:00
