@@ -3,19 +3,19 @@ const upload = require('./upload.js');
 const ora = require('ora');
 const core = require('@actions/core');
 const getAllMd = require('./get-all-md.js');
-const DIR_PATH = './docs/views'
+const DIR_PATH = './docs/views';
 const fs = require('fs');
-
+const path = require('path');
 (async function() {
   // Get images
-  const files = getAllMd(DIR_PATH);
-  await getImg(files);
+  const savePaths = getAllMd(DIR_PATH);
+  const savePaths = await getImg(savePaths);
 
   // Upload img-map.json
-  for (let index = 0; index < files.length; index++) {
-    const fileName = files[index];
+  for (let index = 0; index < savePaths.length; index++) {
+    const filePath = savePaths[index];
 
-    const filePath = './img/' + fileName;
+    const fileName = path.basename(filePath);
     const spinner = ora(`Upload: ${filePath}`).start();
     try {
       const { uploadPath, sha, currentSha } = await upload(
