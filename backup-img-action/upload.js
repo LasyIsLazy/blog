@@ -3,13 +3,12 @@
  */
 const axios = require('axios');
 const BASE_URL = 'https://api.github.com';
+const REMOTE_DIR = '/blog/';
 
 async function upload(base64Content, { Authorization, fileName }) {
   // GitHub API will decode the url
-  const url =
-    BASE_URL +
-    '/repos/LasyIsLazy/img/contents/test/' +
-    encodeURIComponent(fileName);
+  const url = BASE_URL + '/repos/LasyIsLazy/img/contents' + REMOTE_DIR;
+  encodeURIComponent(fileName);
   // if content exists
   const res = await axios({
     method: 'get',
