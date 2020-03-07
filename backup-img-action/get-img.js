@@ -23,6 +23,7 @@ const getAllImg = markdown => {
 };
 
 async function getImg(files = []) {
+  const savePaths = [];
   if (!fs.existsSync('./img')) {
     fs.mkdirSync('./img');
   }
@@ -48,10 +49,10 @@ async function getImg(files = []) {
           }
         })
           .then(function(response) {
-            response.data.pipe(
-              fs.createWriteStream('./img/' + encodeURIComponent(url))
-            );
-            spinner.succeed(`Dowloaded: ${url}`);
+            const savePath = path.join('./img/', encodeURIComponent(url));
+            response.data.pipe(fs.createWriteStream(savePath));
+            savePaths.push(savePath);
+            spinner.succeed(`Dowloaded ${url} into ${path.resolve(savePath)}`);
           })
           .catch(err => {
             spinner.fail(`Dowloaded fail: ${url}`);
@@ -71,6 +72,8 @@ async function getImg(files = []) {
 
   console.log('Generate map', imgMap);
   fs.writeFileSync('./img-map.json', JSON.stringify(imgMap));
+
+  return savePaths;
 }
 
 module.exports = getImg;
