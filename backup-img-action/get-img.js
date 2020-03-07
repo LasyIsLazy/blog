@@ -50,7 +50,7 @@ async function getImg(files = []) {
           }
         })
           .then(function(response) {
-            const savePath = path.join('./img/', encodeURIComponent(url));
+            const savePath = path.join(IMG_SAVE_PATH, encodeURIComponent(url));
             response.data.pipe(fs.createWriteStream(savePath));
             savePaths.push(savePath);
             spinner.succeed(`Dowloaded ${url} into ${path.resolve(savePath)}`);
