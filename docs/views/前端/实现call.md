@@ -16,8 +16,9 @@ Function.prototype.myCall = function (thisArg, ...args) {
   }
   const func = Symbol('func'); // 使用 Symbol 避免命名冲突
   thisArg[func] = this;
-  thisArg[func](...args);
+  const returnVal = thisArg[func](...args);
   delete thisArg[func]; // 清理变量
+  return returnVal;
 };
 
 function test(arg) {
@@ -27,7 +28,6 @@ function test(arg) {
 const obj = { name: 'lasy' };
 test.call(obj, 'arg'); // lasy arg
 test.myCall(obj, 'arg'); // lasy arg
-
 
 ```
 
