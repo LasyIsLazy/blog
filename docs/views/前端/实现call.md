@@ -10,11 +10,14 @@ categories:
 ```javascript
 Function.prototype.myCall = function (thisArg, ...args) {
   if (typeof thisArg !== 'object') {
+    // 异常情况直接调用(undefined 和 null 在不同环境下处理不同，这里不作处理，直接调用）
     this(...args);
     return;
   }
-  thisArg._func = this;
-  thisArg._func(...args);
+  const func = Symbol('func'); // 使用 Symbol 避免命名冲突
+  thisArg[func] = this;
+  thisArg[func](...args);
+  delete thisArg[func]; // 清理变量
 };
 
 function test(arg) {
@@ -22,8 +25,9 @@ function test(arg) {
 }
 
 const obj = { name: 'lasy' };
-test.call(obj, 'arg');
-test.myCall(obj, 'arg');
+test.call(obj, 'arg'); // lasy arg
+test.myCall(obj, 'arg'); // lasy arg
+
 
 ```
 
