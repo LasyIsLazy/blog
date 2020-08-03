@@ -58,14 +58,14 @@ module.exports = {
         text: '标签'
       }
     },
-    friendLink: [
-      {
-        title: '友情链接',
-        desc: '...',
-        email: '...@...com',
-        link: 'https://www.....com'
-      }
-    ],
+    // friendLink: [
+    //   {
+    //     title: '友情链接',
+    //     desc: '...',
+    //     email: '...@...com',
+    //     link: 'https://www.....com'
+    //   }
+    // ],
     logo: '/logo.jpeg',
     search: true,
     searchMaxSuggestions: 10,
