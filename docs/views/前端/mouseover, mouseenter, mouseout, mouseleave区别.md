@@ -1,9 +1,9 @@
----
+****---
 title: mouseover, mouseenter, mouseout, mouseleave区别
 date: 2018-07-12 20:00:25
 tags:
 - JavaScript
-categories: 
+categories:
  - 前端
 ---
 # mouseover, mouseenter, mouseout, mouseleave区别
@@ -27,3 +27,4 @@ categories:
 - `mouseover`和`mouseout`是一对，`mouseenter`和`mouseleave`是一对，拥有相同的处理方式，一个表示进入，一个表示离开；
 - `mouseover`和`mouseout`会触发冒泡；
 - `mouseover`和`mouseout`比`mouseenter`和`mouseleave`先触发。
+- `mouseover`和`mouseout` 不受进出子元素影响，`mouseenter`和`mouseleave` 受进出子元素影响。
