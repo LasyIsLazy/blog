@@ -1,3 +1,11 @@
+let secrets = process.env
+if (process.env.NODE_ENV === 'development') {
+  try {
+    secrets = require('./../../.secrets.json')
+  } catch (error) {
+    console.warn('开发环境没有配置 secrets')
+  }
+}
 module.exports = {
   title: 'Lasy',
   description: "Lasy's blog",
@@ -77,14 +85,8 @@ module.exports = {
     recordLink: 'http://www.beian.miit.gov.cn',
     startYear: '2016',
     valineConfig: {
-      appId:
-        process.env.NODE_ENV === 'development'
-          ? require('./../../.secrets.json').LEANCLOUD_APP_ID
-          : process.env.LEANCLOUD_APP_ID,
-      appKey:
-        process.env.NODE_ENV === 'development'
-          ? require('./../../.secrets.json').LEANCLOUD_APP_KEY
-          : process.env.LEANCLOUD_APP_KEY,
+      appId: secrets.LEANCLOUD_APP_ID,
+      appKey: secrets.LEANCLOUD_APP_KEY,
       placeholder: '填写昵称和网址，你的昵称会链接到你的博客哦~',
       recordIP: true,
       avator: 'mp'
