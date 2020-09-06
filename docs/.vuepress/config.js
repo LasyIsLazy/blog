@@ -39,6 +39,11 @@ module.exports = {
         icon: 'reco-date'
       },
       {
+        text: '留言板',
+        link: 'views/other/留言板.html/',
+        icon: 'reco-suggestion'
+      },
+      {
         text: '与我相关',
         icon: 'reco-message',
         items: [
