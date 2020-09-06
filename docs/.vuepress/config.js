@@ -83,7 +83,7 @@ module.exports = {
     search: true,
     searchMaxSuggestions: 10,
     sidebar: 'auto',
-    lastUpdated: 'Last Updated',
+    lastUpdated: '更新时间',
     author: 'Lasy',
     authorAvatar: '/logo.jpeg',
     record: '冀ICP备17005103号',
