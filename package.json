@@ -7,7 +7,7 @@
   "author": "1255352506@qq.com",
   "license": "MIT",
   "devDependencies": {
-    "@actions/core": "^1.2.3",
+    "@actions/core": "^1.2.6",
     "axios": "^0.19.2",
     "commonmark": "^0.29.1",
     "ora": "^4.0.3",
