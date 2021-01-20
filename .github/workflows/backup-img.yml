@@ -2,8 +2,8 @@ name: Backup Image
 
 on:
   schedule:
-    # 每周一 00:00
-    - cron: '0 0 ? * MON'
+    # 每周一 02:00 UTC 时间
+    - cron: '0 2 ? * MON'
   push:
     paths:
       # MarkDown 文件变化
