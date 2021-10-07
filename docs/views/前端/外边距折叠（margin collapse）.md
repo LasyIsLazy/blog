@@ -2,17 +2,20 @@
 title: 外边距折叠
 date: 2018-09-14 11:55:44
 tags:
-- JavaScript
-categories: 
- - 前端
+  - JavaScript
+categories:
+  - 前端
 ---
+
 ## 定义
 
 [W3C 的定义](https://www.w3.org/TR/CSS2/box.html#collapsing-margins)：
->In CSS, the adjoining margins of two or more boxes (which might or might not be siblings) can combine to form a single margin. Margins that combine this way are said to collapse, and the resulting combined margin is called a collapsed margin.
+
+> In CSS, the adjoining margins of two or more boxes (which might or might not be siblings) can combine to form a single margin. Margins that combine this way are said to collapse, and the resulting combined margin is called a collapsed margin.
 
 大意是：
->两个或多个盒子 **邻接的外边距**会结合成一个外边距。这种情况就是*外边距折叠*。
+
+> 两个或多个盒子 **邻接的外边距**会结合成一个外边距。这种情况就是*外边距折叠*。
 
 重点是：邻接的外边距
 
@@ -26,7 +29,8 @@ categories:
 条件：**邻接的外边距**
 
 根据 W3C，两个外边距*邻接（adjoining）*的条件是：
->Two margins are adjoining if and only if:
+
+> Two margins are adjoining if and only if:
 
 - both belong to in-flow block-level boxes that participate in the same block formatting context
 - no line boxes, no clearance, no padding and no border separate them (Note that certain zero-height line boxes (see 9.4.2) are ignored for this purpose.)
@@ -39,10 +43,10 @@ categories:
 1. 两个边距都属于 **流内 (in-flow) **的 **同一 BFC（块级格式化上下文）**中的块级元素。
 2. 没有 line boxes、clearance、内边距（padding）或者边框（border）将它们分开。
 3. 两个边距都是垂直相邻的外边距。包括以下几种类型：
-  1. 一个盒子的`top margin`和其第一个流内的 **子元素**的`top margin`。
-  2. 一个盒子的`bottom margin`和其第一个流内的 **兄弟元素**的`top margin`。
-  3. 一个`height: auto`的元素的`bottom margin`和其最后一个流内的 **子元素**的`bottom margin`。
-  4. 没有新建 BFC、`min-height: 0`、`height: auto`并且没有在流内的子元素的盒子的`top margin`和`bottom margin`。
+   1. 一个盒子的`top margin`和其第一个流内的 **子元素**的`top margin`。
+   2. 一个盒子的`bottom margin`和其第一个流内的 **兄弟元素**的`top margin`。
+   3. 一个`height: auto`的元素的`bottom margin`和其最后一个流内的 **子元素**的`bottom margin`。
+   4. 没有新建 BFC、`min-height: 0`、`height: auto`并且没有在流内的子元素的盒子的`top margin`和`bottom margin`。
 
 所以说，发生外边距折叠的外边距要满足以上三个条件。
 在满足前两个条件的基础上，可以将产生条件总结成三种情况：
@@ -160,19 +164,21 @@ div:last-of-type {
 
 ### 流
 
->An element is called out of flow if it is floated, absolutely positioned, or is the root element. An element is called in-flow if it is not out-of-flow. The flow of an element A is the set consisting of A and all in-flow elements whose nearest out-of-flow ancestor is A.
+> An element is called out of flow if it is floated, absolutely positioned, or is the root element. An element is called in-flow if it is not out-of-flow. The flow of an element A is the set consisting of A and all in-flow elements whose nearest out-of-flow ancestor is A.
 
 翻译一下：
->如果元素设置了浮动的、绝对定位或者是根元素，那么就说这个元素在*流外（out-of-flow）*。
-不是流外的元素就是*流内（in-flow）*
-元素 A 的*流（flow）*指的是 A 和所有最近流外祖先元素是 A 的元素组成的集合。
+
+> 如果元素设置了浮动的、绝对定位或者是根元素，那么就说这个元素在*流外（out-of-flow）*。
+> 不是流外的元素就是*流内（in-flow）*
+> 元素 A 的*流（flow）*指的是 A 和所有最近流外祖先元素是 A 的元素组成的集合。
 
 值得注意的是，根元素是流外元素，所以，所有元素都不会和根元素发生外边距折叠。
 
 ### BFC（块级格式化上下文）
 
 BFC:
->Floats, absolutely positioned elements, block containers (such as inline-blocks, table-cells, and table-captions) that are not block boxes, and block boxes with 'overflow' other than 'visible' (except when that value has been propagated to the viewport) establish new block formatting contexts for their contents.
+
+> Floats, absolutely positioned elements, block containers (such as inline-blocks, table-cells, and table-captions) that are not block boxes, and block boxes with 'overflow' other than 'visible' (except when that value has been propagated to the viewport) establish new block formatting contexts for their contents.
 
 也就是说，以下设置会形成新的 BFC
 
@@ -257,7 +263,6 @@ BFC:
 
 以上便是关于外边距折叠的所有内容。
 本文中还提到了 clearance，但是 clearance 对外边距折叠的影响需要一定的篇幅来介绍，且不适合用于阻止外边距折叠，我写了另一篇文章单独介绍 clearance 对外边距折叠的影响。
-
 
 参考：
 
