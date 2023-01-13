@@ -5,6 +5,7 @@ export default defineUserConfig({
   title: 'Lasy',
   description: "Lasy's blog",
   lang: 'zh-CN',
+  base: '/blog/',
   head: [
     [
       'link',
