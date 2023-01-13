@@ -23,8 +23,8 @@ jobs:
       - name: Build
         run: pnpm build
 
-        uses: actions/upload-pages-artifact@v1
-        width:
+      - uses: actions/upload-pages-artifact@v1
+        with:
           path: .vuepress/dist
 
       - name: Deploy
