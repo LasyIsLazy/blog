@@ -14,7 +14,8 @@ categories:
 其原理就是用给出的半径确定一个椭圆，椭圆与边框相切，椭圆与边框相切的两点之间的椭圆部分作为边框圆角。
 
 原理示意：
-
+<!-- TODO: 增加内嵌代码相关支持 -->
+<!-- 
 <div class="border-radius-container">
   <div class="rec"></div>
   <div class="round"></div>
@@ -59,7 +60,7 @@ categories:
   font-size: 14px;
   border-radius: 100px
 }
-</style>
+</style> -->
 
 ## 使用
 
