@@ -5,6 +5,7 @@ export default defineUserConfig({
   title: 'Lasy',
   description: "Lasy's blog",
   lang: 'zh-CN',
+  base: '/blog/',
   head: [
     [
       'link',
@@ -26,8 +27,10 @@ export default defineUserConfig({
     logo: '/logo.jpeg',
     author: 'Lasy',
     lastUpdatedText: '',
+    catalogTitle: '目录',
     navbar: [
       { text: '主页', link: '/' },
+      // cspell:disable-next-line
       { text: '分类', link: 'categories/qianduan/1/' },
     ],
   }),

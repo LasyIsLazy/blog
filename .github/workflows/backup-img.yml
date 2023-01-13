@@ -7,7 +7,7 @@ on:
   push:
     paths:
       # MarkDown 文件变化
-      - 'docs/**.md'
+      - 'blogs/**.md'
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest

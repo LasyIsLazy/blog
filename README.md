@@ -6,7 +6,7 @@ modules: # 指定首页展示模块
   - Footer
 banner: # banner 模块的配置
   heroText: Lasy
-  tagline: Bring yourself back to line.
+  tagline: Bring yourself back online.
   heroImage: /logo.jpeg
 #   bgImage: /bg.png
   bgImageStyle:
@@ -24,4 +24,4 @@ categories:
 ---
 # 博客
 
-博客地址：https://LasyIsLazy.github.io
+博客地址：<https://LasyIsLazy.github.io>
