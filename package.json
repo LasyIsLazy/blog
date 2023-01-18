@@ -1,23 +1,23 @@
 {
-  "name": "lasy-blog",
-  "version": "1.0.0",
+  "name": "blog",
+  "version": "2.0.0",
   "description": "Lasy's blog",
-  "main": "index.js",
   "repository": "https://github.com/LasyIsLazy/blog.git",
   "author": "1255352506@qq.com",
   "license": "MIT",
-  "devDependencies": {
-    "@actions/core": "^1.2.3",
-    "axios": "^0.21.2",
-    "commonmark": "^0.29.1",
-    "ora": "^4.0.3",
-    "vuepress": "^1.2.0",
-    "vuepress-theme-reco": "^1.2.0"
-  },
   "scripts": {
-    "start": "yarn run dev || npm run dev",
-    "dev": "set NODE_ENV=development&&vuepress dev docs",
-    "build": "vuepress build docs"
+    "dev": "vuepress dev .",
+    "start": "vuepress dev .",
+    "build": "vuepress build ."
   },
-  "dependencies": {}
+  "dependencies": {
+    "@vuepress/client": "2.0.0-beta.60",
+    "vue": "^3.2.45",
+    "vuepress": "2.0.0-beta.60",
+    "vuepress-theme-reco": "2.0.0-beta.44"
+  },
+  "volta": {
+    "node": "18.13.0",
+    "pnpm": "7.24.3"
+  }
 }
