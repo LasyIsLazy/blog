@@ -13,13 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Auto backup image
     steps:
-      # To use this repository's private action, you must check out the repository
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v1
-      - name: install
-        run: yarn
+      - uses: actions/checkout@v1
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.13.0
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.24.3
+          run_install: true
+
       - name: Backup image
         uses: ./backup-img-action # Uses an action in the root directory
         with:
