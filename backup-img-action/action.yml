@@ -5,5 +5,5 @@ inputs:
     description: 'Token access to repository'
     required: true
 runs:
-  using: 'node12'
+  using: 'node16'
   main: 'index.js'

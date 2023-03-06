@@ -1,6 +1,7 @@
 name: Backup Image
 
 on:
+  workflow_dispatch:
   schedule:
     # 每周一 02:00 UTC 时间
     - cron: '0 2 ? * MON'
