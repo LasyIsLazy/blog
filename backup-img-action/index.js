@@ -3,10 +3,10 @@ const upload = require('./upload.js');
 const ora = require('ora');
 const core = require('@actions/core');
 const getAllMd = require('./get-all-md.js');
-const DIR_PATH = './docs/views';
+const DIR_PATH = './blogs';
 const fs = require('fs');
 const path = require('path');
-(async function() {
+(async function () {
   // Get images
   const mdPaths = getAllMd(DIR_PATH);
   const savePaths = await getImg(mdPaths);
@@ -22,7 +22,7 @@ const path = require('path');
         fs.readFileSync(filePath).toString('base64'),
         {
           Authorization: `Bearer ${core.getInput('ACCESS_TOKEN')}`,
-          fileName
+          fileName,
         }
       );
       spinner.succeed(
@@ -44,7 +44,7 @@ const path = require('path');
       fs.readFileSync('./img-map.json').toString('base64'),
       {
         Authorization: `Bearer ${core.getInput('ACCESS_TOKEN')}`,
-        fileName: 'img-map.json'
+        fileName: 'img-map.json',
       }
     );
     if (sha === currentSha) {
