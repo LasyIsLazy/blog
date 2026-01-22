@@ -1,0 +1,164 @@
+# 为什么设置 `min-width: 0` 能解决 Flex 布局中的溢出问题？
+
+## 问题背景
+
+在 Flexbox 布局中，我们经常会遇到这样的问题：即使设置了 `flex: 1` 希望元素占据剩余空间，但当内容（如长文本）超出容器时，元素仍然会被内容撑开，导致布局溢出。
+
+## 根本原因：Flexbox 的默认行为
+
+### 默认的 `min-width: auto`
+
+在 flex 容器中，flex 子元素有一个**默认的最小尺寸约束**：
+
+- **行方向（`flex-direction: row`）**：默认 `min-width: auto`
+- **列方向（`flex-direction: column`）**：默认 `min-height: auto`
+
+这个默认值意味着：**元素不会缩小到其内容的最小宽度/高度以下**。
+
+### 问题场景示例
+
+考虑以下代码结构：
+
+```html
+<div class="match-item">  <!-- 容器 -->
+  <div class="match-content">  <!-- flex: 1 -->
+    <div class="match-card">  <!-- flex 容器 -->
+      <div class="match-info">  <!-- flex: 1 -->
+        <div class="match-title">很长的标题文本...</div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+```css
+.match-content {
+    flex: 1;  /* 希望占据剩余空间 */
+}
+
+.match-info {
+    flex: 1;  /* 希望占据剩余空间 */
+}
+
+.match-title {
+    /* 没有设置宽度限制 */
+}
+```
+
+**问题流程**：
+
+1. `match-title` 的文本很长，保持其自然宽度
+2. `match-info` 被 `match-title` 撑开，不会缩小（因为 `min-width: auto`）
+3. `match-card` 被 `match-info` 撑开
+4. `match-content` 被 `match-card` 撑开
+5. **最终超出 `match-item` 容器** ❌
+
+## 解决方案：`min-width: 0`
+
+### 核心原理
+
+设置 `min-width: 0` 后：
+
+- ✅ **覆盖默认的 `min-width: auto`**
+- ✅ **允许 flex 子元素缩小到 0 宽度**（实际会受内容影响）
+- ✅ **配合 `overflow: hidden` 和文本截断样式**，文本会被截断而不是撑开容器
+
+### 完整解决方案
+
+```css
+.match-content {
+    flex: 1;
+    min-width: 0;  /* ✅ 允许缩小，不会超出父容器 */
+}
+
+.match-card {
+    min-width: 0;  /* ✅ 允许缩小，不会超出 match-content */
+}
+
+.match-info {
+    flex: 1;
+    min-width: 0;  /* ✅ 允许缩小，不会超出 match-card */
+    overflow: hidden;  /* 配合使用，隐藏溢出内容 */
+}
+
+.match-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;  /* 文本会被截断而不是撑开 */
+}
+```
+
+### 解决方案链
+
+```
+match-item (容器)
+  └─ match-content (flex: 1, min-width: 0) ✅
+      └─ match-card (min-width: 0) ✅
+          └─ match-info (flex: 1, min-width: 0) ✅
+              └─ match-title (overflow: hidden, text-overflow: ellipsis) ✅
+```
+
+## 为什么需要多层设置？
+
+**关键点**：每一层都是 flex 子元素，每一层都有默认的 `min-width: auto`。
+
+如果只在最外层设置 `min-width: 0`：
+- ❌ 中间层仍可能被内容撑开
+- ❌ 问题依然存在
+
+如果每一层都设置 `min-width: 0`：
+- ✅ 每一层都可以缩小
+- ✅ 文本在最内层（`match-title`）被截断
+- ✅ 不会超出 `match-item` 容器
+
+## 最佳实践
+
+### 1. 识别需要设置的层级
+
+在 flex 布局中，**所有可能被内容撑开的 flex 子元素**都应该设置 `min-width: 0`（或 `min-height: 0`，取决于 flex 方向）。
+
+### 2. 配合文本截断使用
+
+```css
+.text-container {
+    flex: 1;
+    min-width: 0;  /* 必须设置 */
+}
+
+.text-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;  /* 单行截断 */
+    /* 或 */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;  /* 多行截断 */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+```
+
+### 3. 检查清单
+
+在解决 flex 布局溢出问题时，检查：
+
+- [ ] 所有 flex 子元素是否设置了 `min-width: 0`（或 `min-height: 0`）？
+- [ ] 文本容器是否设置了 `overflow: hidden`？
+- [ ] 是否使用了 `text-overflow: ellipsis` 或其他截断方式？
+- [ ] 是否在正确的层级设置了这些属性？
+
+## 总结
+
+`min-width: 0` 是解决 Flexbox 布局中内容溢出问题的**关键技巧**：
+
+1. **打破默认约束**：覆盖 flexbox 默认的 `min-width: auto`
+2. **允许元素缩小**：让 flex 子元素可以缩小到内容宽度以下
+3. **配合文本截断**：与 `overflow: hidden` 和 `text-overflow: ellipsis` 配合使用
+4. **多层设置**：在每一层 flex 子元素上都设置，确保完整的解决方案链
+
+这是处理 flex 布局中长文本溢出问题的**标准解决方案**，在响应式设计和移动端开发中尤其重要。
+
+## 参考资料
+
+- [MDN: min-width](https://developer.mozilla.org/en-US/docs/Web/CSS/min-width)
+- [CSS-Tricks: The min-width: 0 trick](https://css-tricks.com/preventing-a-grid-blowout/)
+- [Flexbox 规范：最小尺寸](https://www.w3.org/TR/css-flexbox-1/#min-size-auto)
